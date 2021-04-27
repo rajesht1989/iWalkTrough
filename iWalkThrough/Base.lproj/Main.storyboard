@@ -24,15 +24,15 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJY-6e-8Vc">
-                                <rect key="frame" x="20" y="782" width="129" height="30"/>
+                                <rect key="frame" x="20" y="732" width="129" height="30"/>
                                 <state key="normal" title="Show Walkthrough"/>
                                 <connections>
                                     <action selector="walkThroughAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oxG-up-Bmh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9O6-rg-z7y">
-                                <rect key="frame" x="265" y="782" width="129" height="30"/>
-                                <state key="normal" title="Show Walkthrough"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9O6-rg-z7y">
+                                <rect key="frame" x="313" y="732" width="81" height="30"/>
+                                <state key="normal" title="Show Stack"/>
                                 <connections>
                                     <action selector="walkThroughAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hcd-KD-fqH"/>
                                 </connections>
@@ -51,26 +51,49 @@
                                     <action selector="walkThroughAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IEL-tF-9mD"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Avm-yL-KeS">
+                                <rect key="frame" x="20" y="782" width="374" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Uo-pf-dMh">
+                                        <rect key="frame" x="124" y="25" width="126" height="30"/>
+                                        <state key="normal" title="Show walkthrough"/>
+                                        <connections>
+                                            <action selector="walkThroughAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Aj-MV-atJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="bTQ-Ax-u8H"/>
+                                    <constraint firstItem="1Uo-pf-dMh" firstAttribute="centerX" secondItem="Avm-yL-KeS" secondAttribute="centerX" id="lNz-oF-7s4"/>
+                                    <constraint firstItem="1Uo-pf-dMh" firstAttribute="centerY" secondItem="Avm-yL-KeS" secondAttribute="centerY" id="zE9-83-a4M"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="9O6-rg-z7y" firstAttribute="centerY" secondItem="gJY-6e-8Vc" secondAttribute="centerY" id="2rE-R0-Psx"/>
                             <constraint firstItem="6S2-Br-QQg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9Rq-yb-yBV"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9O6-rg-z7y" secondAttribute="bottom" constant="50" id="S6F-ae-GU5"/>
+                            <constraint firstItem="4Bh-BQ-MWc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="s1o-BV-rae" secondAttribute="trailing" constant="8" symbolic="YES" id="Beq-jR-app"/>
                             <constraint firstItem="s1o-BV-rae" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="SSy-2R-njo"/>
+                            <constraint firstItem="Avm-yL-KeS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Sju-PU-bB4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Avm-yL-KeS" secondAttribute="trailing" constant="20" id="TI6-j1-mZT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Bh-BQ-MWc" secondAttribute="trailing" constant="20" id="ZQe-to-5LC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gJY-6e-8Vc" secondAttribute="bottom" constant="50" id="b34-2f-2qi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gJY-6e-8Vc" secondAttribute="bottom" constant="100" id="b34-2f-2qi"/>
                             <constraint firstItem="4Bh-BQ-MWc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="c2K-Hq-Qlc"/>
+                            <constraint firstItem="Avm-yL-KeS" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="keD-pD-zJ0"/>
                             <constraint firstItem="gJY-6e-8Vc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="lej-vi-1Ob"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9O6-rg-z7y" secondAttribute="trailing" constant="20" id="mgw-wY-9he"/>
                             <constraint firstItem="6S2-Br-QQg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n9I-sH-ekj"/>
+                            <constraint firstItem="9O6-rg-z7y" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gJY-6e-8Vc" secondAttribute="trailing" constant="8" symbolic="YES" id="ofb-B4-tLj"/>
                             <constraint firstItem="s1o-BV-rae" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="xiB-qL-DF6"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="97" y="88"/>
+            <point key="canvasLocation" x="95.652173913043484" y="87.723214285714278"/>
         </scene>
     </scenes>
     <resources>

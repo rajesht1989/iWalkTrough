@@ -38,6 +38,17 @@ class WalkThroughViewController: UIViewController {
         on.present(controller, animated: true)
     }
     
+    static func show(configurations: [WalkThroughConfig], on: UIViewController, completion: (() -> Void)? = nil, index: Int = 0) {
+        if configurations.count > index {
+            let config = configurations[index]
+            show(config: config, on: on) {
+                show(configurations: configurations, on: on, completion: completion, index: index + 1)
+            }
+        } else {
+            completion?()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
@@ -50,7 +61,6 @@ class WalkThroughViewController: UIViewController {
     
     func configureView() {
         view.addSubview(createOverlay())
-
         titleLabel.text = config.title
         titleLabel.font = .boldSystemFont(ofSize: 30)
         titleLabel.textColor = .white
@@ -58,7 +68,7 @@ class WalkThroughViewController: UIViewController {
         view.addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 20).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: config.titleTopConstantFor(frame: view.bounds)).isActive = true
 
         subTitleLabel.text = config.subTitle
